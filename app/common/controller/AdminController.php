@@ -1,0 +1,333 @@
+<?php
+
+// +----------------------------------------------------------------------
+// | EasyAdmin
+// +----------------------------------------------------------------------
+// | PHP交流群: 763822524
+// +----------------------------------------------------------------------
+// | 开源协议  https://mit-license.org 
+// +----------------------------------------------------------------------
+// | github开源项目：https://github.com/zhongshaofa/EasyAdmin
+// +----------------------------------------------------------------------
+
+
+namespace app\common\controller;
+
+
+use app\BaseController;
+use think\facade\Cache;
+use think\Request;
+use think\facade\Env;
+use think\Model;
+use think\facade\Db;
+use EasyAdmin\tool\CommonTool;
+
+/**
+ * Class AdminController
+ * @package app\common\controller
+ */
+class AdminController extends BaseController
+{
+
+    use \app\common\traits\JumpTrait;
+
+    /**
+     * 当前模型
+     * @Model
+     * @var object
+     */
+    protected $model;
+
+    /**
+     * 字段排序
+     * @var array
+     */
+    protected $sort = [
+        'id' => 'desc',
+    ];
+
+    /**
+     * 允许修改的字段
+     * @var array
+     */
+    protected $allowModifyFields = [
+        'status',
+        'sort',
+        'remark',
+        'is_delete',
+        'is_auth',
+        'title',
+    ];
+
+    /**
+     * 不导出的字段信息
+     * @var array
+     */
+    protected $noExportFields = ['delete_time', 'update_time'];
+
+    /**
+     * 下拉选择条件
+     * @var array
+     */
+    protected $selectWhere = [];
+
+    /**
+     * 是否关联查询
+     * @var bool
+     */
+    protected $relationSearch = false;
+
+    /**
+     * 模板布局, false取消
+     * @var string|bool
+     */
+    protected $layout = 'layout/default';
+
+    /**
+     * 是否为演示环境
+     * @var bool
+     */
+    protected $isDemo = false;
+
+
+    /**
+     * 初始化方法
+     */
+    protected function initialize()
+    {
+
+        parent::initialize();
+        $this->layout && $this->app->view->engine()->layout($this->layout);
+
+    }
+
+    /**
+     * 模板变量赋值
+     * @param string|array $name 模板变量
+     * @param mixed $value 变量值
+     * @return mixed
+     */
+    public function assign($name, $value = null)
+    {
+        return $this->app->view->assign($name, $value);
+    }
+
+    /**
+     * 解析和获取模板内容 用于输出
+     * @param string $template
+     * @param array $vars
+     * @return mixed
+     */
+    public function fetch($template = '', $vars = [])
+    {
+        return $this->app->view->fetch($template, $vars);
+    }
+
+    /**
+     * 重写验证规则
+     * @param array $data
+     * @param array|string $validate
+     * @param array $message
+     * @param bool $batch
+     * @return array|bool|string|true
+     */
+    public function validate(array $data, $validate, array $message = [], bool $batch = false)
+    {
+        try {
+            parent::validate($data, $validate, $message, $batch);
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
+        return true;
+    }
+
+    /**
+     * 构建请求参数
+     * @param array $excludeFields 忽略构建搜索的字段
+     * @return array
+     */
+    protected function buildTableParames($excludeFields = [])
+    {
+         $get = request()->get('', null, null);
+        
+        $page = isset($get['page']) && !empty($get['page']) ? $get['page'] : "1";
+        $limit = isset($get['limit']) && !empty($get['limit']) ? $get['limit'] : "14";
+        $page=intval($page);
+        $limit=intval($limit);
+        $filters = isset($get['filter']) && !empty($get['filter']) ? $get['filter'] : '{}';
+        $ops = isset($get['op']) && !empty($get['op']) ? $get['op'] : '{}';
+        // json转数组
+        $filters = json_decode($filters, true);
+        $ops = json_decode($ops, true);
+        $where = [];
+        $excludes = [];
+
+
+
+        foreach ($filters as $key => $val) {
+            if (in_array($key, $excludeFields)) {
+                $excludes[$key] = $val;
+                continue;
+
+            }
+
+            //dump($ops[$key]);
+            $op = isset($ops[$key]) && !empty($ops[$key]) ? $ops[$key] : '%*%';
+
+
+           // dump($key);die;
+            //$key='user.nickname';
+            //dump($key);die;
+            switch (strtolower($op)) {
+
+                case '=':
+                    $where[] = [$key, '=', $val];
+                    break;
+                case '%*%':
+                    $where[] = [$key, 'LIKE', "%{$val}%"];
+                    break;
+                case '*%':
+                    $where[] = [$key, 'LIKE', "{$val}%"];
+                    break;
+                case '%*':
+                    $where[] = [$key, 'LIKE', "%{$val}"];
+                    break;
+                case 'in':
+                    $where[] = [$key, 'in', "1,20,30,35,100"];
+                    break;
+                case 'notin':
+                    $where[] = [$key, 'in', "40,50,60"];
+                    break;
+                case 'range':
+                    $val=!empty($val) ? $val : '';
+                    [$beginTime, $endTime] = explode(' - ', $val);
+                    $where[] = [$key, '>=', strtotime($beginTime)];
+                    $where[] = [$key, '<=', strtotime($endTime)];
+                    break;
+                case 'flow':
+
+                    $val=!empty($val) ? $val : '';
+                    [$beginTime, $endTime] = explode(' - ', $val);
+                    $where[] = [$key, '>=', strtotime($beginTime)];
+                    $where[] = [$key, '<=', strtotime($endTime)];
+                    break;
+                case 'nick':
+
+                    $users=Db::name('user')->field('id')->where('nickname','like',"%{$val}%")
+                        ->select();
+                    $user_id=[];
+
+                    foreach ($users as $v){
+                        $user_id[]=$v['id'];
+                    }
+
+
+                    $user=join(',',$user_id);
+
+                    $where[] = ["uid", 'in', "{$user}"];
+
+
+                    break;
+                case 'paylawyer':
+
+                    $users=Db::name('user')->field('id')->where('nickname','like',"%{$val}%")
+                        ->select();
+                    $user_id=[];
+
+                    foreach ($users as $v){
+                        $user_id[]=$v['id'];
+                    }
+
+
+                    $user=join(',',$user_id);
+
+
+
+                    $where[]=['att_id','in',"{$user}"];
+
+
+                    break;
+                case 'order':
+
+                    $users=Db::name('order')->field('id')->where('order_no',"$val")
+                        ->select();
+
+$order_id=[];
+                    foreach ($users as $v){
+                        $order_id[]=$v['id'];
+                    }
+
+
+                    $order=join(',',$order_id);
+
+                    $where[] = ["source_id", '=', "{$order}"];
+                    //dump($where);die;
+
+                    break;
+                case 'tel':
+
+                    $users=Db::name('user')->field('id')->where('telphone','like',"%{$val}%")
+                        ->select();
+                    $user_id=[];
+                    foreach ($users as $v){
+                        $user_id[]=$v['id'];
+                    }
+
+                    $user=join(',',$user_id);
+
+                    $where[] = ["uid", 'in', "{$user}"];
+
+
+                    // dump($where);die;
+
+                    break;
+                case 'lawyer_tel':
+
+                    $users=Db::name('user')->field('id')->where('telphone','like',"%{$val}%")
+                        ->select();
+                    $user_id=[];
+                    foreach ($users as $v){
+                        $user_id[]=$v['id'];
+                    }
+                    $user=join(',',$user_id);
+
+                    $where[] = ["att_id", 'in', "{$user}"];
+
+
+                    break;
+                default:
+                    $where[] = [$key, $op, "%{$val}"];
+            }
+
+        }
+        //dump($where);die;
+        return [$page, $limit, $where, $excludes];
+    }
+
+    /**
+     * 下拉选择列表
+     * @return \think\response\Json
+     */
+    public function selectList()
+    {
+        $fields = input('selectFields');
+        $data = $this->model
+            ->where($this->selectWhere)
+            ->field($fields)
+            ->select();
+        $this->success(null, $data);
+    }
+    /**
+     * 下拉选择列表
+     * @return \think\response\Json
+     */
+    public function AdminId()
+    {
+        $sereact = Request()->header('secret');
+
+        $data=Cache::store('redis')->get("Login$sereact");
+       return $data['id'];
+
+    }
+
+}
