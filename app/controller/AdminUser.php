@@ -3,6 +3,7 @@ declare (strict_types=1);
 
 namespace app\controller;
 
+use think\facade\Cache;
 use think\Facade\Db;
 use think\facade\View;
 use think\Request;
@@ -35,7 +36,6 @@ class AdminUser extends AdminController
         $list = $this->model
             ->where($where)
             ->page($page, $limit)
-            ->order($this->sort)
             ->select();
         $auth= new \app\model\Auth();
         foreach ($list as $v){

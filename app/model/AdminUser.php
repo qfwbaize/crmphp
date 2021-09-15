@@ -11,7 +11,7 @@ use think\Model;
 class AdminUser extends Model
 {
     //
-    protected $name = "system_admin";
+    protected $name = "business_card";
     protected $deleteTime = false;
     public function getAuthList()
     {

@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="292c887e-f36c-431b-be02-3459e48383ca" name="更改" comment="项目提交" />
+    <list default="true" id="292c887e-f36c-431b-be02-3459e48383ca" name="更改" comment="项目提交">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/common/controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/AdminUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AdminUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/AdminUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AdminUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/Redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/Redis.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +114,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\crmphp" />
+      <recent name="D:\crmphp\public" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -108,8 +129,16 @@
       <option name="presentableId" value="Default" />
       <updated>1631527359406</updated>
       <workItem from="1631527360547" duration="1306000" />
-      <workItem from="1631581420470" duration="620000" />
+      <workItem from="1631581420470" duration="10853000" />
     </task>
+    <task id="LOCAL-00001" summary="项目提交">
+      <created>1631582066174</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631582066174</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

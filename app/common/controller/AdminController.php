@@ -204,13 +204,6 @@ class AdminController extends BaseController
                     $where[] = [$key, '>=', strtotime($beginTime)];
                     $where[] = [$key, '<=', strtotime($endTime)];
                     break;
-                case 'flow':
-
-                    $val=!empty($val) ? $val : '';
-                    [$beginTime, $endTime] = explode(' - ', $val);
-                    $where[] = [$key, '>=', strtotime($beginTime)];
-                    $where[] = [$key, '<=', strtotime($endTime)];
-                    break;
                 case 'nick':
 
                     $users=Db::name('user')->field('id')->where('nickname','like',"%{$val}%")
@@ -323,10 +316,11 @@ $order_id=[];
      */
     public function AdminId()
     {
-        $sereact = Request()->header('secret');
+        $sereact = Request()->header('token');
 
-        $data=Cache::store('redis')->get("Login$sereact");
-       return $data['id'];
+        $data=Cache::store('redis')->get("ONE_STAND:USER:login_token:$sereact");
+
+       return $data;
 
     }
 

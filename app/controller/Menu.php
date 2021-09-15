@@ -3,6 +3,7 @@ declare (strict_types=1);
 
 namespace app\controller;
 
+use think\facade\Cache;
 use think\Model;
 use think\Request;
 use app\common\controller\AdminController;
@@ -29,6 +30,9 @@ class Menu extends AdminController
      */
     public function index()
     {
+        $data = Cache::store('redis')->get("ONE_STAND:USER:login_token:0HQTCtpgNi_7013");
+        dump($data);
+        die;
         //
         list($page, $limit, $where) = $this->buildTableParames();
         $count = $this->model
@@ -39,7 +43,7 @@ class Menu extends AdminController
         $list = $this->model
             ->where($where)
             ->where('status', '>', '0')
-            ->field('id,pid,name,status')
+            ->field('id,pid,name,status,current,path')
             ->select()
             ->toArray();
         $newNodeList = [];

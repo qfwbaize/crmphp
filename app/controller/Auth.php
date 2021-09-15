@@ -44,7 +44,7 @@ class Auth extends AdminController
         //
         //
         $admin = new \app\model\AdminUser();
-        $list = $admin->where('auth_ids', $id)->select();
+        $list = $admin->where('auth_id', $id)->select();
         empty($list) && $this->error('管理员没这权限');
 
 

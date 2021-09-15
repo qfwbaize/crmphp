@@ -119,7 +119,7 @@ class Redis extends Driver
             return $default;
         }
 
-        return $this->unserialize($value);
+        return $value;
     }
 
     /**

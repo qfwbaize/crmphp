@@ -12,7 +12,7 @@ class Menu extends Model
 {
     //
     protected $deleteTime = 'delete_time';
-    protected $name = "system_menu";
+    protected $name = "company_menu";
 
     /**
      * 根据角色ID获取授权节点
@@ -29,7 +29,7 @@ class Menu extends Model
         $systemNode = new Menu();
         $nodelList = $systemNode
             ->where('status', '1')
-            ->field('id,pid,name,status,path,href')
+            ->field('id,pid,name,status,path')
             ->select()
             ->toArray();
 
@@ -57,7 +57,7 @@ class Menu extends Model
 
         $checkNodeList = (new AuthNode())
             ->where('auth_id', $authId)
-            ->column('node_id');
+            ->column('menu_id');
         $as = [];
         foreach ($checkNodeList as $k => $v) {
             $as[] = $v;
@@ -73,6 +73,7 @@ class Menu extends Model
             ->toArray();
 
         $newNodeList = [];
+        dump($newNodeList);
         $datas = [];
         foreach ($nodelList as $vo) {
             $datas[] = $vo['path'];

@@ -51,8 +51,8 @@ Route::group('apis', function () {
         Route::get('admin/auth', 'Auth/index'); //角色查询
         Route::post('auth/add', 'Auth/create'); //角色添加
         Route::get('auth/read', 'Auth/read'); //角色id查询
-        Route::post('auth/edit', 'Auth/edit'); //角色修改
-        Route::post('auth/del', 'Auth/delete'); //角色删除
+        Route::put('auth/edit', 'Auth/edit'); //角色修改
+        Route::delete('auth/del', 'Auth/delete'); //角色删除
         Route::get('adminuser/adminauth', 'AdminUser/adminauth'); //管理员角色查询
         Route::get('admin/adminuser', 'AdminUser/index'); //管理员查询
         Route::post('adminuser/add', 'AdminUser/create'); //管理员添加
@@ -60,4 +60,5 @@ Route::group('apis', function () {
         Route::post('adminuser/edit', 'AdminUser/edit'); //管理员修改
         Route::post('adminuser/del', 'AdminUser/delete'); //管理员删除
 
-})->middleware(['priority', 'verification', 'auths', 'log']);
+})->ext();
+    //->middleware(['priority', 'verification', 'auths', 'log']);
