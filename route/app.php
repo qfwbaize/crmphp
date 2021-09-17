@@ -42,4 +42,10 @@ Route::group('apis', function () {
         Route::put('adminuser/edit', 'AdminUser/edit'); //员工转移
         Route::post('adminuser/del', 'AdminUser/delete'); //管理员删除
 
-})->middleware(['priority', 'verification']);
+})->middleware(['priority', 'verification'])->allowCrossDomain([
+    /** 设置跨域允许的header头信息，新增token字段 */
+    'Access-Control-Allow-Headers'     => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-CSRF-TOKEN, X-Requested-With, authKey, Accept, Origin, token',
+    /** 允许所有请求 */
+    'Access-Control-Allow-Origin'      => '*',
+    'Access-Control-Allow-Credentials' => 'true',
+]);
