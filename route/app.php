@@ -17,8 +17,12 @@ use think\middleware\Throttle;
      */
 //问题发布接口
 Route::group('apis', function () {
+    Route::get('admin/menu', 'Menu/index'); //菜单查询
 
-        Route::get('admin/menu', 'Menu/index'); //菜单查询
+})->ext();
+Route::group('apis', function () {
+
+
         Route::post('menu/add', 'Menu/create'); //菜单添加
         Route::get('menu/read', 'Menu/read'); //菜单id查询
         Route::put('menu/edit', 'Menu/edit'); //菜单修改
