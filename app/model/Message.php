@@ -11,4 +11,6 @@ use think\Model;
 class Message extends Model
 {
     //
+    protected $deleteTime = 'delete_time';
+    protected $name = "company_message";
 }
