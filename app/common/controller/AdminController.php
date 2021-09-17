@@ -311,7 +311,7 @@ $order_id=[];
         $this->success(null, $data);
     }
     /**
-     * 下拉选择列表
+     * 机构id
      * @return \think\response\Json
      */
     public function AdminId()
@@ -322,6 +322,20 @@ $order_id=[];
         $data=json_decode($data,true);
         //dump($data["cid"]);die;
        return $data['cid'];
+
+    }
+    /**
+     * 名片id
+     * @return \think\response\Json
+     */
+    public function CardId()
+    {
+        $sereact = Request()->header('token');
+
+        $data=Cache::store('redis')->get("ONE_STAND:USER:login_token:$sereact");
+        $data=json_decode($data,true);
+        //dump($data["cid"]);die;
+        return $data['myCardId'];
 
     }
 

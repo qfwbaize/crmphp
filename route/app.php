@@ -41,5 +41,9 @@ Route::group('apis', function () {
         Route::get('adminuser/read', 'AdminUser/read'); //管理员id查询
         Route::put('adminuser/edit', 'AdminUser/edit'); //员工转移
         Route::post('adminuser/del', 'AdminUser/delete'); //管理员删除
+    Route::get('admin/messages', 'Messages/index'); //查看消息
+    Route::post('messages/add', 'Messages/create'); //添加消息
+    Route::get('messages/read', 'Messages/read'); //阅读消息
+    Route::delete('messages/del', 'Messages/delete'); //角色删除
 
 })->middleware(['priority', 'verification']);
