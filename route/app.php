@@ -39,15 +39,12 @@ Route::group('apis', function () {
 
         Route::get('admin/menu', 'Menu/index'); //菜单查询
         Route::post('menu/add', 'Menu/create'); //菜单添加
-        Route::get('admin/reply', 'Imreply/index'); //快捷回复查询
-        Route::post('reply/add', 'Imreply/create'); //快捷回复增加
-        Route::post('reply/del', 'Imreply/delete'); //快捷回复删除
         Route::get('menu/read', 'Menu/read'); //菜单id查询
-        Route::post('menu/edit', 'Menu/edit'); //菜单修改
-        Route::post('menu/del', 'Menu/delete'); //菜单删除
+        Route::put('menu/edit', 'Menu/edit'); //菜单修改
+        Route::delete('menu/del', 'Menu/delete'); //菜单删除
         Route::get('auth/authorizeid', 'Auth/authorizeid'); //授权角色查询
         Route::get('auth/authorize', 'Auth/authorize'); //授权查询
-        Route::post('auth/saveAuthorize', 'Auth/saveAuthorize'); //授权
+        Route::put('auth/saveAuthorize', 'Auth/saveAuthorize'); //授权
         Route::get('admin/auth', 'Auth/index'); //角色查询
         Route::post('auth/add', 'Auth/create'); //角色添加
         Route::get('auth/read', 'Auth/read'); //角色id查询
@@ -57,7 +54,7 @@ Route::group('apis', function () {
         Route::get('admin/adminuser', 'AdminUser/index'); //管理员查询
         Route::post('adminuser/add', 'AdminUser/create'); //管理员添加
         Route::get('adminuser/read', 'AdminUser/read'); //管理员id查询
-        Route::post('adminuser/edit', 'AdminUser/edit'); //管理员修改
+        Route::put('adminuser/edit', 'AdminUser/edit'); //员工转移
         Route::post('adminuser/del', 'AdminUser/delete'); //管理员删除
 
 })->ext();

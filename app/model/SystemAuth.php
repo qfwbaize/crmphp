@@ -17,6 +17,8 @@ use app\common\model\TimeModel;
 
 class SystemAuth extends TimeModel
 {
+    //
+    protected $name = "company_auth";
 
     protected $deleteTime = 'delete_time';
 
@@ -32,7 +34,7 @@ class SystemAuth extends TimeModel
     {
         $checkNodeList = (new SystemAuthNode())
             ->where('auth_id', $authId)
-            ->column('node_id');
+            ->column('menu_id');
         $systemNode = new SystemNode();
         $nodelList = $systemNode
             ->where('is_auth', 1)

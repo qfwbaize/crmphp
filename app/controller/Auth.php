@@ -32,7 +32,32 @@ class Auth extends AdminController
     }
 
 
+    /**
+     * @NodeAnotation(title="列表")
+     */
+    public function index()
+    {
 
+        list($page, $limit, $where) = $this->buildTableParames();
+        $count = $this->model
+            ->where('company_id',$this->AdminId())
+            ->where($where)
+            ->count();
+        $list = $this->model
+            ->where($where)
+            ->where('company_id',$this->AdminId())
+            ->page($page, $limit)
+            ->order($this->sort)
+            ->select();
+        $data = [
+            'code'  => 200,
+            'msg'   => '成功',
+            'total' => $count,
+            'data'  => $list,
+        ];
+        return json($data);
+
+    }
     /**
      * 删除指定资源
      *
@@ -60,7 +85,25 @@ class Auth extends AdminController
 
 
     }
+    /**
+     * @NodeAnotation(title="添加")
+     */
+    public function create()
+    {
 
+        $post = $this->request->post();
+
+        $rule = ['name'=>'require'];
+        $this->validate($post, $rule);
+        try {
+            $post['company_id']=$this->AdminId();
+            $save = $this->model->save($post);
+        } catch (\Exception $e) {
+            $this->error('保存失败:'.$e->getMessage());
+        }
+        $save ? $this->success('保存成功') : $this->error('保存失败');
+
+    }
     /**
      * 根据角色查询授权.
      *
@@ -119,7 +162,9 @@ class Auth extends AdminController
     public function saveAuthorize()
     {
         $id = request()->param('id');
-        $node = request()->param('node', "[]");
+        $node = request()->param('node');
+        $node=explode(',',$node);
+
 
         $row = $this->model->find($id);
 
@@ -127,12 +172,13 @@ class Auth extends AdminController
         try {
             $authNode = new \app\model\AuthNode();
             $authNode->where('auth_id', $id)->delete();
+
             if (!empty($node)) {
                 $saveAll = [];
                 foreach ($node as $vo) {
                     $saveAll[] = [
                         'auth_id' => $id,
-                        'node_id' => $vo,
+                        'menu_id' => $vo,
                     ];
                 }
 

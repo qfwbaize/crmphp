@@ -30,9 +30,6 @@ class Menu extends AdminController
      */
     public function index()
     {
-        $data = Cache::store('redis')->get("ONE_STAND:USER:login_token:0HQTCtpgNi_7013");
-        dump($data);
-        die;
         //
         list($page, $limit, $where) = $this->buildTableParames();
         $count = $this->model

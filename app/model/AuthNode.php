@@ -11,6 +11,6 @@ use think\Model;
 class AuthNode extends Model
 {
     //
-    protected $name = "system_auth_node";
+    protected $name = "company_menu_node";
     protected $deleteTime = false;
 }

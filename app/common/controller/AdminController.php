@@ -319,8 +319,9 @@ $order_id=[];
         $sereact = Request()->header('token');
 
         $data=Cache::store('redis')->get("ONE_STAND:USER:login_token:$sereact");
-
-       return $data;
+        $data=json_decode($data,true);
+        //dump($data["cid"]);die;
+       return $data['cid'];
 
     }
 

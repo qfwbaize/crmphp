@@ -41,10 +41,10 @@ class AuthService
      */
     protected $config = [
         'auth_on'          => true,              // 权限开关
-        'system_admin'     => 'system_admin',    // 用户表
-        'system_auth'      => 'system_auth',     // 权限表
-        'system_node'      => 'system_menu',     // 节点表
-        'system_auth_node' => 'system_auth_node',// 权限-节点表
+        'system_admin'     => 'business_card',    // 用户表
+        'system_auth'      => 'company_auth',     // 权限表
+        'system_node'      => 'company_menu',     // 节点表
+        'system_auth_node' => 'company_menu_node',// 权限-节点表
     ];
 
     /**
@@ -116,7 +116,7 @@ class AuthService
         }
 
         // 用户验证，优先获取缓存信息
-        if (empty($this->adminInfo) || $this->adminInfo['status'] != 1 || empty($this->adminInfo['auth_ids'])) {
+        if (empty($this->adminInfo) ||  empty($this->adminInfo['auth_id'])) {
             return false;
         }
         // 判断该节点是否允许访问
@@ -155,7 +155,7 @@ $get=request()->param();
         $buildAuthNodeSql = Db::name($this->config['system_auth_node'])
             ->distinct(true)
             ->where("auth_id IN {$buildAuthSql}")
-            ->field('node_id')
+            ->field('menu_id')
             ->buildSql(true);
         $nodeList = Db::name($this->config['system_node'])
             ->distinct(true)
@@ -178,25 +178,25 @@ $get=request()->param();
         $nodeList = [];
         $adminInfo = Db::name($this->config['system_admin'])
             ->where([
-                'auth_ids'     => $this->adminId,
-                'status' => 1,
+                'auth_id'     => $this->adminId,
+
             ])->find();
 
-        if (!empty($adminInfo) && !empty($adminInfo['auth_ids'])) {
+        if (!empty($adminInfo) && !empty($adminInfo['auth_id'])) {
             $buildAuthSql = Db::name($this->config['system_auth'])
                 ->distinct(true)
-                ->whereIn('id', $adminInfo['auth_ids'])
+                ->whereIn('id', $adminInfo['auth_id'])
                 ->field('id')
                 ->buildSql(true);
             $buildAuthNodeSql = Db::name($this->config['system_auth_node'])
                 ->distinct(true)
                 ->where("auth_id IN {$buildAuthSql}")
-                ->field('node_id')
+                ->field('menu_id')
                 ->buildSql(true);
             $nodeList = Db::name($this->config['system_node'])
                 ->distinct(true)
                 ->where("id IN {$buildAuthNodeSql}")
-                ->column('href');
+                ->column('path');
         }
 
         return $nodeList;
@@ -210,7 +210,7 @@ $get=request()->param();
      */
     public function getNodeList(){
         return  Db::name($this->config['system_node'])
-            ->column('id,pid,name,href,status','href');
+            ->column('id,pid,name,path,status','path');
     }
 
     /**
@@ -224,7 +224,7 @@ $get=request()->param();
      */
     public function getAdminInfo(){
         return  Db::name($this->config['system_admin'])
-            ->where('auth_ids', $this->adminId)
+            ->where('auth_id', $this->adminId)
             ->find();
     }
 

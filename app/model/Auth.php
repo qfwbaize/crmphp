@@ -27,12 +27,12 @@ class Auth extends Model
 
         $checkNodeList = (new AuthNode())
             ->where('auth_id', $authId)
-            ->column('node_id');
+            ->column('menu_id');
 
         $systemNode = new Menu();
         $nodelList = $systemNode
             ->where('status', '>', 0)
-            ->field('id,pid,name,status,path,href')
+            ->field('id,pid,name,status,path')
             ->select()
             ->toArray();
 
