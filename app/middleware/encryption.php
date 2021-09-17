@@ -27,9 +27,9 @@ class encryption
 
         //dump($adminConfig);die;
         $token = Request()->header('token');
-        $sereact = Request()->header('secret');
 
-        $data=Cache::store('redis')->get("Login$sereact");
+
+        $data=Cache::store('redis')->get("ONE_STAND:USER:login_token:$token");
 
         //dump($data);die;
         if($data==NULL){

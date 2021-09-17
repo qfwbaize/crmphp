@@ -14,26 +14,7 @@ use think\middleware\Throttle;
 /*
      * verification 加密验证
      * priority 登陆验证 token验证
-     * auths 路由权限验证
      */
-
-Route::group('apis', function () {
-        Route::get('menu/menu', 'Menu/menu'); //根据角色返回菜单
-        Route::get('admin/flow', 'Flow/index'); //流量统计查询
-        Route::get('admin/income', 'Income/index'); //数据统计查询
-        Route::get('faq/msgread', 'Faq/msg_read'); //设置已读
-        Route::get('faq/im', 'Faq/ImId'); //查询
-        Route::post('admin/login', 'Login/index'); //登陆
-        Route::get('admin/userlogin', 'Login/UserLogin'); //登陆
-        Route::post('admin/code', 'Login/code'); //获取验证码
-})->middleware('verification');
-Route::group('apis', function () {
-        Route::get('admin/sale', 'Sale/index'); //销售统计查询
-        Route::get('flow/export', 'Flow/export');
-        Route::get('sale/export', 'Sale/export');
-        Route::post('admin/loginout', 'Login/LoginOut');
-})->middleware(['verification', 'priority']);
-
 //问题发布接口
 Route::group('apis', function () {
 
@@ -57,5 +38,4 @@ Route::group('apis', function () {
         Route::put('adminuser/edit', 'AdminUser/edit'); //员工转移
         Route::post('adminuser/del', 'AdminUser/delete'); //管理员删除
 
-})->ext();
-    //->middleware(['priority', 'verification', 'auths', 'log']);
+})->middleware(['priority', 'verification']);
