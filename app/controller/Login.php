@@ -109,9 +109,6 @@ class Login extends AdminController
             $phone = $post['username'];
             $token = md5($phone);
             $code = Cache::store('redis')->get("$token", $admin);
-            //$code=json_decode($code,true);
-            // print_r($code['code']);die;
-
             if ($post['password'] != $code) {
 
                 $this->error('验证码有误');
