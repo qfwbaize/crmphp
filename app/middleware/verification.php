@@ -27,7 +27,6 @@ class verification
             $datas = ['code' => 0, 'msg' =>  $validate->getError(),];
             return json($datas);
         }
-
         $validates = Validate::rule(
             [
 

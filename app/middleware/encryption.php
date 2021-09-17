@@ -30,12 +30,13 @@ class encryption
 
 
         $data=Cache::store('redis')->get("ONE_STAND:USER:login_token:$token");
-
+$data=json_decode($data,true);
         //dump($data);die;
         if($data==NULL){
             $datas = ['code' => 0, 'msg' => '您还没有登陆',];
             return  json($datas);
         }
+
         if($data['token']==null){
             $datas = ['code' => 0, 'msg' => 'token过期',];
             return  json($datas);
