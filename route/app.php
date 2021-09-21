@@ -18,6 +18,16 @@ use think\middleware\Throttle;
 //问题发布接口
 Route::group('apis', function () {
 
+    Route::get('admin/cooperation', 'Cooperation/index'); //查看合作申请
+    Route::post('cooperation/add', 'Cooperation/create'); //申请合作
+    Route::get('cooperation/read', 'Cooperation/read'); //查看合作详情
+    Route::delete('cooperation/del', 'Cooperation/delete'); //终止合作
+    Route::put('cooperation/edit', 'Cooperation/edit'); //合作审批
+    Route::get('admin/contract', 'Contract/index'); //查看合同
+    Route::post('contract/add', 'Contract/create'); //添加合同
+    Route::post('contract/upload', 'Contract/upload'); //合同上传
+    Route::delete('contract/del', 'Contract/delete'); //合同删除
+
 
 })->ext();
 Route::group('apis', function () {
@@ -45,5 +55,6 @@ Route::group('apis', function () {
     Route::post('messages/add', 'Messages/create'); //添加消息
     Route::get('messages/read', 'Messages/read'); //阅读消息
     Route::delete('messages/del', 'Messages/delete'); //角色删除
+    
 
 })->middleware(['priority', 'verification']);

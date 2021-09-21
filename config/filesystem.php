@@ -31,6 +31,12 @@ return [
             // 可见性
             'visibility' => 'public',
         ],
+        'cdphoto' =>[
+            'type'=>'local',
+            'root'=>app()->getRootPath() . 'public/uploads',
+            'url'        => '/uploads',
+            'visibility' => 'public',
+        ],
 
         // 更多的磁盘配置信息
     ],

@@ -249,5 +249,14 @@ if(!function_exists('isFile')) {
         //否则，完成上传操作
 
     }
+
+}
+if(!function_exists('uploads')) {
+    function uploads()
+    {
+return date('Ymd') . '/' .mt_rand(100, 999);
+
+    }
+
 }
 
