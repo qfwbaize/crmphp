@@ -23,20 +23,27 @@ class Auth extends Model
      * @throws \think\db\exception\ModelNotFoundException
      */
     public function getAuthorizeNodeListByAdminId($authId)
-    {
-
+    { $systemNode = new Menu();
+       if($authId!=0){
         $checkNodeList = (new AuthNode())
             ->where('auth_id', $authId)
             ->field('menu_id')
             ->buildSql(true);
 
-        $systemNode = new Menu();
+
         $nodelList = $systemNode
             ->where('status', '>', 0)
             ->field('id,pid,name,status,path')
             ->where("id IN {$checkNodeList}")
             ->select()
-            ->toArray();
+            ->toArray();}else{
+           $nodelList = $systemNode
+               ->where('status', '>', 0)
+               ->field('id,pid,name,status,path')
+
+               ->select()
+               ->toArray();
+       }
 
         $newNodeList = [];
         foreach ($nodelList as $vo) {
@@ -52,7 +59,9 @@ class Auth extends Model
                 $newNodeList[] = $vo;
             }
         }
+
         return $newNodeList;
+
     }
 
 
