@@ -143,13 +143,16 @@ class Auth extends AdminController
         $business=new BusinessCard();
        $card_id=$this->CardId();
        $business=$business->where('card_id',$card_id)->find();
+
         empty($business) && $this->error('数据不存在');
-       if($business['auth_id']==null){
-           $this->error('没权限');
-       }
+
         if($business['role_id']>0){
+
             $list = $this->model->getAuthorizeNodeListByAdminId('0');
         }else{
+            if($business['auth_id']==null){
+                $this->error('没权限');
+            }
         $list = $this->model->getAuthorizeNodeListByAdminId($business['auth_id']);}
 
         $data = [
