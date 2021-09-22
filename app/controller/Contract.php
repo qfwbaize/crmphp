@@ -58,7 +58,7 @@ class Contract extends AdminController
         }
         $temp=explode(".",$_FILES['file']['name']);
         $extension =end($temp);
-        if(!in_array($extension,array("pdf","jpg","png","docs","doc"))){
+        if(!in_array($extension,array("pdf","jpg","png","docs","doc","docx"))){
 
             $this->error('不合法');
         }
