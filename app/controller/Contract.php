@@ -56,9 +56,9 @@ class Contract extends AdminController
         if($file==NULL){
         $this->error('没上传文件');
         }
-        $temp=explode(".",$_FILES['image']['name']);
+        $temp=explode(".",$_FILES['file']['name']);
         $extension =end($temp);
-        if(!in_array($extension,array("pdf","jpg","png"))){
+        if(!in_array($extension,array("pdf","jpg","png","docs","doc"))){
 
             $this->error('不合法');
         }
