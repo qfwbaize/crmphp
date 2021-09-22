@@ -21,6 +21,7 @@ Route::group('apis', function () {
     Route::get('admin/cooperation', 'Cooperation/index'); //查看合作申请
     Route::post('cooperation/add', 'Cooperation/create'); //申请合作
     Route::get('cooperation/read', 'Cooperation/read'); //查看合作详情
+    Route::get('cooperation/company', 'Cooperation/company'); //查看合作
     Route::delete('cooperation/del', 'Cooperation/delete'); //终止合作
     Route::put('cooperation/edit', 'Cooperation/edit'); //合作审批
     Route::get('admin/contract', 'Contract/index'); //查看合同

@@ -63,6 +63,18 @@ class Cooperation extends AdminController
         return json($data);
 
     }
+    public function company(){
+        $company=new Company();
+        $list = $company
+            ->field("company_id,company_name")
+            ->select();
+        $data = [
+            'code'  => 200,
+            'msg'   => '成功',
+            'data'  => $list,
+        ];
+        return json($data);
+    }
     /**
      * 显示指定的资源
      *
