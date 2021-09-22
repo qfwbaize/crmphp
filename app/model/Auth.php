@@ -15,7 +15,7 @@ class Auth extends Model
     protected $name = "company_auth";
 
     /**
-     * 根据角色ID获取授权节点
+     * 根据角色ID获取授权菜单
      * @param $authId
      * @return array
      * @throws \think\db\exception\DataNotFoundException
@@ -27,12 +27,14 @@ class Auth extends Model
 
         $checkNodeList = (new AuthNode())
             ->where('auth_id', $authId)
-            ->column('menu_id');
+            ->field('menu_id')
+            ->buildSql(true);
 
         $systemNode = new Menu();
         $nodelList = $systemNode
             ->where('status', '>', 0)
             ->field('id,pid,name,status,path')
+            ->where("id IN {$checkNodeList}")
             ->select()
             ->toArray();
 

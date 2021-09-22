@@ -43,7 +43,7 @@ class AuthService
         'auth_on'          => true,              // 权限开关
         'system_admin'     => 'business_card',    // 用户表
         'system_auth'      => 'company_auth',     // 权限表
-        'system_node'      => 'company_menu',     // 节点表
+        'system_node'      => 'company_menu',     // 菜单表
         'system_auth_node' => 'company_menu_node',// 权限-节点表
     ];
 

@@ -57,4 +57,5 @@ Route::group('apis', function () {
     Route::delete('messages/del', 'Messages/delete'); //角色删除
     
 
-})->middleware(['priority', 'verification']);
+})->ext();
+    //->middleware(['priority', 'verification']);

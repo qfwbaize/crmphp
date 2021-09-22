@@ -4,6 +4,7 @@ declare (strict_types=1);
 namespace app\controller;
 
 
+use app\model\BusinessCard;
 use think\Model;
 use think\Request;
 use app\common\controller\AdminController;
@@ -137,13 +138,16 @@ class Auth extends AdminController
     /**
      * @NodeAnotation(title="授权")
      */
-    public function authorize($id)
+    public function authorize()
     {
-        $row = $this->model->find($id);
+        $business=new BusinessCard();
+       $card_id=$this->CardId();
+       $business=$business->where('card_id',$card_id)->find();
+       if($business['auth_id']==null){
+           $this->error('没权限');
+       }
 
-        empty($row) && $this->error('数据不存在');
-
-        $list = $this->model->getAuthorizeNodeListByAdminId($id);
+        $list = $this->model->getAuthorizeNodeListByAdminId($business['auth_id']);
 
         $data = [
             'code' => 200,
