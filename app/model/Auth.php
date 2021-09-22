@@ -33,13 +33,13 @@ class Auth extends Model
 
         $nodelList = $systemNode
             ->where('status', '>', 0)
-            ->field('id,pid,name,status,path')
+            ->field('id,pid,name,status,path,icon')
             ->where("id IN {$checkNodeList}")
             ->select()
             ->toArray();}else{
            $nodelList = $systemNode
                ->where('status', '>', 0)
-               ->field('id,pid,name,status,path')
+               ->field('id,pid,name,status,path,icon')
 
                ->select()
                ->toArray();
