@@ -171,13 +171,7 @@ class AdminController extends BaseController
 
             }
 
-            //dump($ops[$key]);
             $op = isset($ops[$key]) && !empty($ops[$key]) ? $ops[$key] : '%*%';
-
-
-           // dump($key);die;
-            //$key='user.nickname';
-            //dump($key);die;
             switch (strtolower($op)) {
 
                 case '=':

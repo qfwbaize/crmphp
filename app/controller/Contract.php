@@ -51,7 +51,7 @@ class Contract extends AdminController
 
     }
     public function upload(){
-        $file = $this->request->file('image');
+        $file = $this->request->file('file');
 
         if($file==NULL){
         $this->error('没上传文件');
