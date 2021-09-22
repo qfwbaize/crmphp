@@ -58,11 +58,12 @@ class Contract extends AdminController
         }
         $temp=explode(".",$_FILES['image']['name']);
         $extension =end($temp);
-        if(!in_array($extension,array("pdf","jpg"))){
+        if(!in_array($extension,array("pdf","jpg","png"))){
 
             $this->error('不合法');
         }
-        $saveName = Filesystem::disk('cdphoto')->putFile('uploads',$file,'uploads');
+        $saveName = Filesystem::disk('aliyun')->putFile('uploads',$file,'uploads');
+
         return json(['code'=>200,'msg'=>'成功','data'=>['uploads'=>$saveName]]);
     }
 }
