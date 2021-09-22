@@ -50,12 +50,15 @@ class Messages extends AdminController
                 $company_name = $company->where('company_id', $value['from_id'])->field('company_name')->find();
                 $value['type_name'] = $company_name['company_name'];
 
+
             } else {
                 $value['type_name'] = '平台消息';
             }
             $value['content'] = $messages['content'];
             $value['type'] = $messages['type'];
         }
+        $value['create_time']=$messages['create_time'];
+
         $data = [
             'code' => 200,
             'msg' => '成功',

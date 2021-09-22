@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GET、POST</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<input type="text" name="username" id="username" />
+<input type="text" name="password" id="password" />
+<input type="button" value="Submit" onclick="submit()" />
+</body>
+<script>
+    function submit() {
+        $.ajax({
+            type: "POST",
+            url: "http://test5.mingyicloud.com/apis/auth/add",
+
+            headers: {      //请求头
+
+token:123,
+            },
+
+            data: {
+                username: $("#username").val(),
+                password: $("#password").val()
+            },
+            dataType: "JSON",
+            success: function(result) {}
+        });
+    }
+</script>
+</html>
