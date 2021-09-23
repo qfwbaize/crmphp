@@ -40,7 +40,7 @@ class Menu extends AdminController
         $list = $this->model
             ->where($where)
             ->where('status', '>', '0')
-            ->field('id,pid,name,status,current,path')
+            ->field('id,pid,name,status,current,path,icon')
             ->select()
             ->toArray();
         $newNodeList = [];

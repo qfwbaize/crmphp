@@ -41,11 +41,7 @@ class Cooperation extends AdminController
             $receive=$company->where('company_id',$v['receive_id'])->find();
             $v['launch_name']=$launch['company_name'];
             $v['receive_name']=$receive['company_name'];
-            if($v['launch_id']==$this->AdminId()){
-                $v['type']=1;
-            }else{
-                $v['type']=2;
-            }
+
             if($v['status']==1){
                 $v['status_name']='已审批';
             }elseif($v['status']==0){
