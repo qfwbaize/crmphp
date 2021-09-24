@@ -26,7 +26,7 @@ class Contract extends AdminController
     {
 
         list($page, $limit, $where) = $this->buildTableParames();
-        $company_id=1367;
+        $company_id=$this->AdminId();
         $count = $this->model
             ->whereOr('company_id',$company_id)
             ->whereOr('company_id','0')
