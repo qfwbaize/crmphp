@@ -28,6 +28,15 @@ Route::group('apis', function () {
     Route::post('contract/add', 'Contract/create'); //添加合同
     Route::post('contract/upload', 'Contract/upload'); //合同上传
     Route::delete('contract/del', 'Contract/delete'); //合同删除
+    Route::post('companytask/add', 'CompanyTask/create'); //发布任务
+    Route::get('companytask/release_index', 'CompanyTask/release_index'); //查看发出任务
+    Route::get('companytask/accept_index', 'CompanyTask/accept_index'); //查看接受任务
+    Route::get('companytask/read', 'CompanyTask/read'); //查看任务详情
+    Route::get('companytask/company', 'CompanyTask/company'); //查看合作得机构
+    Route::put('companytask/task_update', 'CompanyTask/task_update'); //修改任务状态
+    Route::get('companytask/task_people', 'CompanyTask/task_people'); //查看正在工作得员工
+    Route::get('companytask/task_people_evidence', 'CompanyTask/task_people_evidence'); //查看员工得证据
+    Route::put('companytask/task_people_edit', 'CompanyTask/task_people_edit'); //对员工工作进行审批
 
 
 })->ext();
