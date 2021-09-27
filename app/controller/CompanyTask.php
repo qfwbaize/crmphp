@@ -58,11 +58,17 @@ class CompanyTask extends AdminController
         $company = new Company();
         $business = new BusinessCard();
         $content = new TaskContent();
+        $receive= new TaskReceive();
 
         foreach ($list as $vo) {
             $business_name = $business->where('card_id', $vo['card_id'])->find();
             if (!empty($business_name)) {
                 $vo['name'] = $business_name['name'];
+            }
+            $receive_id=$receive->where('task_id',$vo['id'])->find();
+            if(!empty($receive_id)){
+                $company_names = $company->where('company_id', $receive_id['company_task_id'])->find();
+                $vo['company_task_name']=$company_names['company_name'];
             }
             $company_name = $company->where('company_id', $vo['company_id'])->find();
             if (!empty($company_name)) {
