@@ -305,6 +305,12 @@ class CompanyTask extends AdminController
         if (!empty($company_task_name)) {
             $row['company_name'] = $company_task_name['company_name'];
         }
+        $receive= new TaskReceive();
+        $receive_id=$receive->where('task_id',$row['id'])->find();
+        if(!empty($receive_id)){
+            $company_names = $company->where('company_id', $receive_id['company_task_id'])->find();
+            $row['company_task_name']=$company_names['company_name'];
+        }
         $row['name'] = $business_name['name'];
         $row['logo'] = $business_name['logo'];
         $row['content'] = $task_content['content'];
