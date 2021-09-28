@@ -254,7 +254,7 @@ if(!function_exists('isFile')) {
 if(!function_exists('uploads')) {
     function uploads()
     {
-return date('Ymd') . '/' .mt_rand(100, 999);
+return date('Ym') . '/' .mt_rand(100, 999);
 
     }
 

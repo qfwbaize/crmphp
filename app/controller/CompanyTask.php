@@ -7,6 +7,7 @@ use app\common\controller\AdminController;
 use app\model\BusinessCard;
 use app\model\Company;
 use app\model\Cooperation;
+use app\model\Reward;
 use app\model\TaskContent;
 use app\model\TaskEvidence;
 use app\model\TaskPeople;
@@ -478,6 +479,29 @@ class CompanyTask extends AdminController
             $this->error('保存失败:' . $e->getMessage());
         }
         $save ? $this->success('保存成功') : $this->error('保存失败');
+    }
+    /**
+     * 奖励钱.
+     *
+     * @return \think\Response
+     */
+    public function reward(){
+
+        $post = $this->request->post();
+        $rule = [
+            'card_id|员工客户'=>'require',
+            'task_id|任务id'=>'require',
+            'money|金额'=>'require',
+        ];
+        $post['task_card_id']=$this->CardId();
+        $this->validate($post, $rule);
+        try {
+            $reward=new Reward();
+            $save = $reward->save($post);
+        } catch (\Exception $e) {
+            $this->error('保存失败:'.$e->getMessage());
+        }
+        $save ? $this->success('成功') : $this->error('失败');
     }
 
 }
