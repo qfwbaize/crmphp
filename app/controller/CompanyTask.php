@@ -260,14 +260,21 @@ class CompanyTask extends AdminController
      */
     public function task_people_evidence($card_id){
         list($page, $limit, $where) = $this->buildTableParames();
+        $get = $this->request->get();
+        $rule = [
+            'task_id'=>'require'
+        ];
+        $this->validate($get, $rule);
         $taskevidence = new TaskEvidence();
         $count = $taskevidence
             ->where($where)
             ->where('card_id', $card_id)
+            ->where('task_id',$get['task_id'])
             ->count();
         $list = $taskevidence
             ->where($where)
             ->where('card_id', $card_id)
+            ->where('task_id',$get['task_id'])
             ->page($page, $limit)
             ->order($this->sort)
             ->select();
