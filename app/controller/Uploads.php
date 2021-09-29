@@ -15,7 +15,8 @@ class Uploads extends AdminController
     public function __construct(App $app)
     {
         parent::__construct($app);
-
+        $this->model = new \app\model\Message();
+        $adminid=$this->AdminId();
     }
     /**
      * 机构上传证据

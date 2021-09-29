@@ -341,14 +341,15 @@ $order_id=[];
         $post['content']=$msg;
         $post['type']=1;
         $messages = new \app\model\Messages();
-        $message = new \app\model\Messages();
+        $message = new \app\model\Message();
         $save = $messages->save($post);
         $message_save=[
             'messages_id' => $messages->id,
             'from_id' => $this->AdminId(),
             'to_id' => $card_id
         ];
-        $message = $this->model->$save($message_save);
+
+        $message->save($message_save);
     }
 
 }

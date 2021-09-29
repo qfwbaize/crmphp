@@ -629,15 +629,16 @@ class CompanyTask extends AdminController
      */
     public function delete($id)
     {
-        $row = $this->model->whereIn('id', $id)->select();
+        $row = $this->model->where('id', $id)->find();
         $row->isEmpty() && $this->error('数据不存在');
+
         try {
             $msg='您得任务'.$row['title'].'被拒绝';
             $this->message($row['company_id'],$msg,1);
             $save = $row->delete();
 
         } catch (\Exception $e) {
-            $this->error('删除失败');
+            $this->error('删除失败'.$e->getMessage());
         }
         $save ? $this->success('删除成功') : $this->error('删除失败');
     }
