@@ -12,7 +12,7 @@ use think\model\concern\SoftDelete;
 class Task extends Model
 {
     //
-    use SoftDelete;
+
     protected $deleteTime = 'delete_time';
     protected $name = "company_task";
 }
