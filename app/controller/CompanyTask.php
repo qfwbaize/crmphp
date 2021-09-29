@@ -70,6 +70,7 @@ class CompanyTask extends AdminController
             if(!empty($receive_id)){
                 $company_names = $company->where('company_id', $receive_id['company_task_id'])->find();
                 $vo['company_task_name']=$company_names['company_name'];
+                $vo['company_task_id']=$receive_id['company_task_id'];
             }
             $company_name = $company->where('company_id', $vo['company_id'])->find();
             if (!empty($company_name)) {
@@ -79,6 +80,7 @@ class CompanyTask extends AdminController
             if (!empty($task_content)) {
                 $vo['money'] = $task_content['money'];
             }
+
             if ($vo['pid'] == 0) {
                 $children = [];
                 foreach ($pid as $v) {
@@ -526,6 +528,62 @@ class CompanyTask extends AdminController
         $save ? $this->success('保存成功') : $this->error('保存失败');
     }
     /**
+     * 查看个人打款凭证.
+     *
+     * @return \think\Response
+     */
+    public function read_company_reward(){
+        $reward= new Reward();
+        $get = $this->request->get();
+        $rule = [
+            'card_id|员工客户'=>'require',
+            'task_id|任务id'=>'require',
+        ];
+        $this->validate($get, $rule);
+        $row = $reward->where('task_id',$get['task_id'])->where('card_id',$get['card_id'])->find();
+
+        if (!empty($row)) {
+
+            $data = ['code' => 200, 'msg' => '成功', 'data' => $row,];
+
+
+        } else {
+
+            $data = ['code' => 0, 'msg' => '没数据', 'data' => '',];
+
+
+        }
+        return json($data);
+    }
+    /**
+     * 查看个人打款凭证.
+     *
+     * @return \think\Response
+     */
+    public function read_attor_company_reward(){
+        $reward= new Reward();
+        $get = $this->request->get();
+        $rule = [
+            'company_id|机构'=>'require',
+            'task_id|任务id'=>'require',
+        ];
+        $this->validate($get, $rule);
+        $row = $reward->where('task_id',$get['task_id'])->where('company_id',$get['company_id'])->find();
+
+        if (!empty($row)) {
+
+            $data = ['code' => 200, 'msg' => '成功', 'data' => $row,];
+
+
+        } else {
+
+            $data = ['code' => 0, 'msg' => '没数据', 'data' => '',];
+
+
+        }
+        return json($data);
+    }
+    /**
      * 奖励钱.
      *
      * @return \think\Response
@@ -534,12 +592,26 @@ class CompanyTask extends AdminController
 
         $post = $this->request->post();
         $rule = [
-            'card_id|员工客户'=>'require',
+            'type'=>'require',
             'task_id|任务id'=>'require',
             'money|金额'=>'require',
         ];
-        $post['task_card_id']=$this->CardId();
         $this->validate($post, $rule);
+        if($post['type']==1){
+            $rule = [
+                'card_id'=>'require',
+
+            ];
+            $this->validate($post, $rule);
+        }elseif($post['type']==2){
+            $rule = [
+                'company_id'=>'require',
+
+            ];
+            $this->validate($post, $rule);
+        }
+        $post['task_card_id']=$this->CardId();
+        $post['task_company_id']=$this->AdminId();
         try {
             $reward=new Reward();
             $save = $reward->save($post);
