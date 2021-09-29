@@ -292,6 +292,44 @@ class CompanyTask extends AdminController
         return json($data);
 
     }
+    /**
+     * 查看所有打款凭证.
+     *
+     * @return \think\Response
+     */
+    public function company_reward(){
+        list($page, $limit, $where) = $this->buildTableParames();
+        $reward= new Reward();
+        $get = $this->request->get();
+        $rule = [
+
+            'task_id|任务id'=>'require',
+        ];
+        $this->validate($get, $rule);
+        $count = $reward
+            ->where('task_id',$get['task_id'])
+            ->where($where)
+            ->count();
+        $list = $reward
+            ->where('task_id',$get['task_id'])
+            ->where($where)
+            ->page($page, $limit)
+            ->order($this->sort)
+            ->select();
+        $business=new BusinessCard();
+        foreach ($list as $value){
+            $business_name=$business->where('card_id',$value['card_id'])->find();
+            $value['name']=$business_name['name'];
+            $value['logo']=$business_name['logo'];
+        }
+        $data = [
+            'code'  => 200,
+            'msg'   => '成功',
+            'total' => $count,
+            'data'  => $list,
+        ];
+        return json($data);
+    }
 
 
     /**

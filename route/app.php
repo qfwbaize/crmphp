@@ -39,7 +39,7 @@ Route::group('apis', function () {
     Route::put('companytask/task_people_edit', 'CompanyTask/task_people_edit'); //对员工工作进行审批
     Route::delete('companytask/del', 'CompanyTask/delete'); //机构拒绝任务
     Route::post('companytask/reward', 'CompanyTask/reward'); //对员工进行奖励
-
+    Route::get('companytask/company_reward', 'CompanyTask/company_reward'); //查看所有凭证
 })->ext();
 //文件上传
 Route::group('apis', function () {
