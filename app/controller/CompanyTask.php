@@ -250,6 +250,10 @@ class CompanyTask extends AdminController
         $this->validate($post, $rule);
         try {
             $save = $row->save($post);
+            if($post['status']==1){
+                $msg='验收不通过';
+                $this->message($row['card_id'],$msg,1);
+            }
         } catch (\Exception $e) {
             $this->error('保存失败');
         }
@@ -556,7 +560,7 @@ class CompanyTask extends AdminController
         return json($data);
     }
     /**
-     * 查看个人打款凭证.
+     * 查看机构打款凭证.
      *
      * @return \think\Response
      */
@@ -620,5 +624,23 @@ class CompanyTask extends AdminController
         }
         $save ? $this->success('成功') : $this->error('失败');
     }
+    /**
+     * @NodeAnotation(title="拒绝任务")
+     */
+    public function delete($id)
+    {
+        $row = $this->model->whereIn('id', $id)->select();
+        $row->isEmpty() && $this->error('数据不存在');
+        try {
+            $msg='您得任务'.$row['title'].'被拒绝';
+            $this->message($row['company_id'],$msg,1);
+            $save = $row->delete();
+
+        } catch (\Exception $e) {
+            $this->error('删除失败');
+        }
+        $save ? $this->success('删除成功') : $this->error('删除失败');
+    }
+
 
 }
