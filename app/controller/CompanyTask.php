@@ -634,7 +634,7 @@ class CompanyTask extends AdminController
 
         try {
             $msg='您得任务'.$row['title'].'被拒绝';
-            $this->message($row['company_id'],$msg,1);
+            $this->message($row['card_id'],$msg,1);
             $save = $row->delete();
 
         } catch (\Exception $e) {
