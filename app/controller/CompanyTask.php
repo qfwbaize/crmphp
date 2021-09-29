@@ -454,7 +454,7 @@ class CompanyTask extends AdminController
             'title' => 'require',
 
             'content' => 'require',
-
+            'status' =>'require',
             'pro_id' => 'require',
             'contract' => 'require',
             'money' => 'require',
@@ -472,7 +472,7 @@ class CompanyTask extends AdminController
                 'company_id' => $post['company_id'],
                 'title' => $post['title'],
                 'card_id' => $this->CardId(),
-                'status' => 0,
+
                 'start_time' => strtotime($post['start_time']),
                 'end_time' => strtotime($post['end_time']),
             ];
