@@ -7,6 +7,7 @@ use app\common\controller\AdminController;
 use think\App;
 use think\Request;
 
+
 class Authentication extends AdminController
 {
     use \app\traits\Curd;
@@ -36,6 +37,7 @@ class Authentication extends AdminController
         $company_id=$this->AdminId();
         $row=$this->model->where('company_id',$company_id)->find();
         empty($row) && $this->error('没有认证过');
+
         if($row['status']=='-1'){
             $data = ['code' => -1, 'msg' => '审核失败', 'data' => $row,];
         }elseif($row['status']==0){

@@ -1,162 +1,6 @@
 {
     "packages": [
         {
-            "name": "adbario/php-dot-notation",
-            "version": "2.2.0",
-            "version_normalized": "2.2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/adbario/php-dot-notation.git",
-                "reference": "eee4fc81296531e6aafba4c2bbccfc5adab1676e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/adbario/php-dot-notation/zipball/eee4fc81296531e6aafba4c2bbccfc5adab1676e",
-                "reference": "eee4fc81296531e6aafba4c2bbccfc5adab1676e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0|^6.0",
-                "squizlabs/php_codesniffer": "^3.0"
-            },
-            "time": "2019-01-01T23:59:15+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Adbar\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Riku Särkinen",
-                    "email": "riku@adbar.io"
-                }
-            ],
-            "description": "PHP dot notation access to arrays",
-            "homepage": "https://github.com/adbario/php-dot-notation",
-            "keywords": [
-                "ArrayAccess",
-                "dotnotation"
-            ],
-            "support": {
-                "issues": "https://github.com/adbario/php-dot-notation/issues",
-                "source": "https://github.com/adbario/php-dot-notation/tree/2.x"
-            },
-            "install-path": "../adbario/php-dot-notation"
-        },
-        {
-            "name": "alibabacloud/client",
-            "version": "1.5.31",
-            "version_normalized": "1.5.31.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aliyun/openapi-sdk-php-client.git",
-                "reference": "19224d92fe27ab8ef501d77d4891e7660bc023c1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aliyun/openapi-sdk-php-client/zipball/19224d92fe27ab8ef501d77d4891e7660bc023c1",
-                "reference": "19224d92fe27ab8ef501d77d4891e7660bc023c1",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "adbario/php-dot-notation": "^2.2",
-                "clagiordano/weblibs-configmanager": "^1.0",
-                "danielstjules/stringy": "^3.1",
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-libxml": "*",
-                "ext-mbstring": "*",
-                "ext-openssl": "*",
-                "ext-simplexml": "*",
-                "ext-xmlwriter": "*",
-                "guzzlehttp/guzzle": "^6.3|^7.0",
-                "mtdowling/jmespath.php": "^2.5",
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "composer/composer": "^1.8",
-                "drupal/coder": "^8.3",
-                "ext-dom": "*",
-                "ext-pcre": "*",
-                "ext-sockets": "*",
-                "ext-spl": "*",
-                "league/climate": "^3.2.4",
-                "mikey179/vfsstream": "^1.6",
-                "monolog/monolog": "^1.24",
-                "phpunit/phpunit": "^5.7.27|^6.1",
-                "psr/cache": "^1.0",
-                "symfony/dotenv": "^3.4",
-                "symfony/var-dumper": "^3.4"
-            },
-            "suggest": {
-                "ext-sockets": "To use client-side monitoring"
-            },
-            "time": "2021-05-13T06:26:38+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "AlibabaCloud\\Client\\": "src"
-                },
-                "files": [
-                    "src/Functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Alibaba Cloud SDK",
-                    "email": "sdk-team@alibabacloud.com",
-                    "homepage": "http://www.alibabacloud.com"
-                }
-            ],
-            "description": "Alibaba Cloud Client for PHP - Use Alibaba Cloud in your PHP project",
-            "homepage": "https://www.alibabacloud.com/",
-            "keywords": [
-                "alibaba",
-                "alibabacloud",
-                "aliyun",
-                "client",
-                "cloud",
-                "library",
-                "sdk",
-                "tool"
-            ],
-            "support": {
-                "issues": "https://github.com/aliyun/openapi-sdk-php-client/issues",
-                "source": "https://github.com/aliyun/openapi-sdk-php-client"
-            },
-            "install-path": "../alibabacloud/client"
-        },
-        {
             "name": "aliyuncs/oss-sdk-php",
             "version": "v2.4.2",
             "version_normalized": "2.4.2.0",
@@ -209,344 +53,6 @@
                 "source": "https://github.com/aliyun/aliyun-oss-php-sdk/tree/v2.4.2"
             },
             "install-path": "../aliyuncs/oss-sdk-php"
-        },
-        {
-            "name": "aliyunmq/mq-http-sdk",
-            "version": "1.0.3",
-            "version_normalized": "1.0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aliyunmq/mq-http-php-sdk.git",
-                "reference": "b96c9814221f078847a84921960f67eab2a1ef0e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aliyunmq/mq-http-php-sdk/zipball/b96c9814221f078847a84921960f67eab2a1ef0e",
-                "reference": "b96c9814221f078847a84921960f67eab2a1ef0e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "guzzlehttp/guzzle": ">=6.0.0",
-                "php": ">=5.5.0"
-            },
-            "time": "2021-01-05T06:03:55+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "MQ\\": "MQ/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Aliyun Message Queue(MQ) Http PHP SDK, PHP>=5.5.0",
-            "homepage": "https://github.com/aliyunmq/mq-http-php-sdk",
-            "keywords": [
-                "MQ",
-                "alicloud",
-                "aliyun",
-                "message",
-                "message queue",
-                "queue"
-            ],
-            "support": {
-                "issues": "https://github.com/aliyunmq/mq-http-php-sdk/issues",
-                "source": "https://github.com/aliyunmq/mq-http-php-sdk/tree/1.0.3"
-            },
-            "install-path": "../aliyunmq/mq-http-sdk"
-        },
-        {
-            "name": "clagiordano/weblibs-configmanager",
-            "version": "v1.4.0",
-            "version_normalized": "1.4.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/clagiordano/weblibs-configmanager.git",
-                "reference": "8ff8bf195d0cbab9fe2ad3199c70920261300834"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/clagiordano/weblibs-configmanager/zipball/8ff8bf195d0cbab9fe2ad3199c70920261300834",
-                "reference": "8ff8bf195d0cbab9fe2ad3199c70920261300834",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.4",
-                "symfony/yaml": "^2.8"
-            },
-            "require-dev": {
-                "clagiordano/phpunit-result-printer": "^1",
-                "php-coveralls/php-coveralls": "^1.1",
-                "phpunit/phpunit": "^4.8"
-            },
-            "time": "2021-05-27T17:48:44+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "clagiordano\\weblibs\\configmanager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Claudio Giordano",
-                    "email": "claudio.giordano@autistici.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "weblibs-configmanager is a tool library for easily read and access to php config array file and direct read/write configuration file / object",
-            "keywords": [
-                "clagiordano",
-                "configuration",
-                "manager",
-                "tool",
-                "weblibs"
-            ],
-            "support": {
-                "issues": "https://github.com/clagiordano/weblibs-configmanager/issues",
-                "source": "https://github.com/clagiordano/weblibs-configmanager/tree/v1.4.0"
-            },
-            "install-path": "../clagiordano/weblibs-configmanager"
-        },
-        {
-            "name": "code-lives/chuanglan",
-            "version": "1.0",
-            "version_normalized": "1.0.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/code-lives/chuanglan.git",
-                "reference": "dfee76829e536ae4fb7f39c30836a7bc36fe878e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/code-lives/chuanglan/zipball/dfee76829e536ae4fb7f39c30836a7bc36fe878e",
-                "reference": "dfee76829e536ae4fb7f39c30836a7bc36fe878e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "time": "2021-04-08T03:56:21+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Chuanglan\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "lijie",
-                    "email": "1873451007@163.com"
-                }
-            ],
-            "description": "this is chuanglansmsapi",
-            "support": {
-                "issues": "https://github.com/code-lives/chuanglan/issues",
-                "source": "https://github.com/code-lives/chuanglan/tree/3.0"
-            },
-            "install-path": "../code-lives/chuanglan"
-        },
-        {
-            "name": "code-lives/im",
-            "version": "3.0",
-            "version_normalized": "3.0.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/code-lives/im.git",
-                "reference": "56f83585d1d7d14c16f543ceaaf7986bb6d26b27"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/code-lives/im/zipball/56f83585d1d7d14c16f543ceaaf7986bb6d26b27",
-                "reference": "56f83585d1d7d14c16f543ceaaf7986bb6d26b27",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "time": "2021-08-02T10:38:23+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Im\\api\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "lijie",
-                    "email": "18734351007@163.com"
-                }
-            ],
-            "description": "腾讯Im 加入聊天池 系统发送自定义消息 加入群组 创建群组 获取群成员列表 检测用户是否在加入Im 更改未读状态 拉取聊天记录 设置个人资料",
-            "support": {
-                "issues": "https://github.com/code-lives/im/issues",
-                "source": "https://github.com/code-lives/im/tree/3.0"
-            },
-            "install-path": "../code-lives/im"
-        },
-        {
-            "name": "code-lives/paypal",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/code-lives/paypal.git",
-                "reference": "065e71d6e500f653060e9698933055ca55103f82"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/code-lives/paypal/zipball/065e71d6e500f653060e9698933055ca55103f82",
-                "reference": "065e71d6e500f653060e9698933055ca55103f82",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "time": "2021-06-02T07:31:29+00:00",
-            "default-branch": true,
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "wxalipay\\paypal\\": "/src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "lijie",
-                    "email": "18734351007@163.com"
-                }
-            ],
-            "description": "Alipay和WeChat的支付、退款、支付查询SDK",
-            "keywords": [
-                "alipay",
-                "payment",
-                "refund",
-                "wechat",
-                "weixin",
-                "微信支付",
-                "支付宝支付",
-                "支付接口"
-            ],
-            "support": {
-                "issues": "https://github.com/code-lives/paypal/issues",
-                "source": "https://github.com/code-lives/paypal/tree/main"
-            },
-            "install-path": "../code-lives/paypal"
-        },
-        {
-            "name": "danielstjules/stringy",
-            "version": "3.1.0",
-            "version_normalized": "3.1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/danielstjules/Stringy.git",
-                "reference": "df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e",
-                "reference": "df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "symfony/polyfill-mbstring": "~1.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "time": "2017-06-12T01:10:27+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Stringy\\": "src/"
-                },
-                "files": [
-                    "src/Create.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel St. Jules",
-                    "email": "danielst.jules@gmail.com",
-                    "homepage": "http://www.danielstjules.com"
-                }
-            ],
-            "description": "A string manipulation library with multibyte support",
-            "homepage": "https://github.com/danielstjules/Stringy",
-            "keywords": [
-                "UTF",
-                "helpers",
-                "manipulation",
-                "methods",
-                "multibyte",
-                "string",
-                "utf-8",
-                "utility",
-                "utils"
-            ],
-            "support": {
-                "issues": "https://github.com/danielstjules/Stringy/issues",
-                "source": "https://github.com/danielstjules/Stringy"
-            },
-            "install-path": "../danielstjules/stringy"
         },
         {
             "name": "doctrine/annotations",
@@ -1875,76 +1381,6 @@
             "install-path": "../markbaker/matrix"
         },
         {
-            "name": "mtdowling/jmespath.php",
-            "version": "2.6.1",
-            "version_normalized": "2.6.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "9b87907a81b87bc76d19a7fb2d61e61486ee9edb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/9b87907a81b87bc76d19a7fb2d61e61486ee9edb",
-                "reference": "9b87907a81b87bc76d19a7fb2d61e61486ee9edb",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": "^5.4 || ^7.0 || ^8.0",
-                "symfony/polyfill-mbstring": "^1.17"
-            },
-            "require-dev": {
-                "composer/xdebug-handler": "^1.4 || ^2.0",
-                "phpunit/phpunit": "^4.8.36 || ^7.5.15"
-            },
-            "time": "2021-06-14T00:11:39+00:00",
-            "bin": [
-                "bin/jp.php"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "JmesPath\\": "src/"
-                },
-                "files": [
-                    "src/JmesPath.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Declaratively specify how to extract elements from a JSON document",
-            "keywords": [
-                "json",
-                "jsonpath"
-            ],
-            "support": {
-                "issues": "https://github.com/jmespath/jmespath.php/issues",
-                "source": "https://github.com/jmespath/jmespath.php/tree/2.6.1"
-            },
-            "install-path": "../mtdowling/jmespath.php"
-        },
-        {
             "name": "myclabs/php-enum",
             "version": "1.8.3",
             "version_normalized": "1.8.3.0",
@@ -2785,94 +2221,6 @@
             "install-path": "../ralouphie/getallheaders"
         },
         {
-            "name": "symfony/polyfill-ctype",
-            "version": "v1.23.0",
-            "version_normalized": "1.23.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "suggest": {
-                "ext-ctype": "For best performance"
-            },
-            "time": "2021-02-19T12:13:01+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.23-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for ctype functions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "ctype",
-                "polyfill",
-                "portable"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "install-path": "../symfony/polyfill-ctype"
-        },
-        {
             "name": "symfony/polyfill-intl-idn",
             "version": "v1.23.0",
             "version_normalized": "1.23.0.0",
@@ -3426,18 +2774,18 @@
             "install-path": "../symfony/var-dumper"
         },
         {
-            "name": "symfony/yaml",
-            "version": "v2.8.52",
-            "version_normalized": "2.8.52.0",
+            "name": "tecnickcom/tcpdf",
+            "version": "6.4.2",
+            "version_normalized": "6.4.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "02c1859112aa779d9ab394ae4f3381911d84052b"
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "172540dcbfdf8dc983bc2fe78feff48ff7ec1c76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/02c1859112aa779d9ab394ae4f3381911d84052b",
-                "reference": "02c1859112aa779d9ab394ae4f3381911d84052b",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/172540dcbfdf8dc983bc2fe78feff48ff7ec1c76",
+                "reference": "172540dcbfdf8dc983bc2fe78feff48ff7ec1c76",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3447,45 +2795,64 @@
                 ]
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/polyfill-ctype": "~1.8"
+                "php": ">=5.3.0"
             },
-            "time": "2018-11-11T11:18:13+00:00",
+            "time": "2021-07-20T14:43:20+00:00",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.8-dev"
-                }
-            },
             "installation-source": "dist",
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
+                "classmap": [
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "LGPL-3.0-only"
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "role": "lead"
                 }
             ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v2.8.52"
+                "issues": "https://github.com/tecnickcom/TCPDF/issues",
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.4.2"
             },
-            "install-path": "../symfony/yaml"
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=GBP&business=paypal@tecnick.com&item_name=donation%20for%20tcpdf%20project",
+                    "type": "custom"
+                }
+            ],
+            "install-path": "../tecnickcom/tcpdf"
         },
         {
             "name": "thans/thinkphp-filesystem-cloud",

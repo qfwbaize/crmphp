@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'wxalipay\\paypal\\' => array($vendorDir . '/code-lives/paypal/src'),
     'think\\view\\driver\\' => array($vendorDir . '/topthink/think-view/src'),
     'think\\middleware\\' => array($vendorDir . '/topthink/think-throttle/src'),
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
@@ -14,7 +13,6 @@ return array(
     'think\\' => array($vendorDir . '/topthink/framework/src/think', $vendorDir . '/topthink/think-helper/src', $vendorDir . '/topthink/think-orm/src', $vendorDir . '/topthink/think-template/src'),
     'thans\\filesystem\\' => array($vendorDir . '/thans/thinkphp-filesystem-cloud/src'),
     'jianyan\\excel\\' => array($vendorDir . '/jianyan74/php-excel/src'),
-    'clagiordano\\weblibs\\configmanager\\' => array($vendorDir . '/clagiordano/weblibs-configmanager/src'),
     'app\\' => array($baseDir . '/app'),
     'addons\\' => array($baseDir . '/addons'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
@@ -24,10 +22,7 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Intl\\Normalizer\\' => array($vendorDir . '/symfony/polyfill-intl-normalizer'),
     'Symfony\\Polyfill\\Intl\\Idn\\' => array($vendorDir . '/symfony/polyfill-intl-idn'),
-    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
-    'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
     'ServiceSwoole\\' => array($vendorDir . '/zhongshaofa/service-swoole/src'),
     'Qiniu\\' => array($vendorDir . '/qiniu/php-sdk/src/Qiniu'),
     'Qcloud\\Cos\\' => array($vendorDir . '/qcloud/cos-sdk-v5/src/Qcloud/Cos'),
@@ -42,13 +37,10 @@ return array(
     'OSS\\' => array($vendorDir . '/aliyuncs/oss-sdk-php/src/OSS'),
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
-    'MQ\\' => array($vendorDir . '/aliyunmq/mq-http-sdk/MQ'),
     'Liz\\Flysystem\\QiNiu\\' => array($vendorDir . '/liz/flysystem-qiniu/src'),
     'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
     'League\\Flysystem\\Cached\\' => array($vendorDir . '/league/flysystem-cached-adapter/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
-    'JmesPath\\' => array($vendorDir . '/mtdowling/jmespath.php/src'),
-    'Im\\api\\' => array($vendorDir . '/code-lives/im/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\Command\\Guzzle\\' => array($vendorDir . '/guzzlehttp/guzzle-services/src'),
@@ -58,7 +50,4 @@ return array(
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations'),
     'Complex\\' => array($vendorDir . '/markbaker/complex/classes/src'),
-    'Chuanglan\\' => array($vendorDir . '/code-lives/chuanglan/src'),
-    'AlibabaCloud\\Client\\' => array($vendorDir . '/alibabacloud/client/src'),
-    'Adbar\\' => array($vendorDir . '/adbario/php-dot-notation/src'),
 );

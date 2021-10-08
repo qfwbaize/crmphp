@@ -12,7 +12,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/qiniu/php-sdk" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/php-enum" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/firebase/php-jwt" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/overtrue/flysystem-cos" />
@@ -33,7 +32,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xxtime/flysystem-aliyun-oss" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/adbario/php-dot-notation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
@@ -46,32 +44,24 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/qcloud/cos-sdk-v5" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zhongshaofa/easy-admin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jianyan74/php-excel" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/code-lives/paypal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/eaglewu/swoole-ide-helper" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/code-lives/im" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/code-lives/chuanglan" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maennchen/zipstream-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem-cached-adapter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/danielstjules/stringy" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/jmespath.php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle-services" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/command" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/clagiordano/weblibs-configmanager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fyflzjz/payment" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aliyuncs/oss-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/complex" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpspreadsheet" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/client" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/aliyunmq/mq-http-sdk" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tcpdf" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -15,9 +15,8 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '35fab96057f1bf5e7aba31a8a6d5fdde' => __DIR__ . '/..' . '/topthink/think-orm/stubs/load_stubs.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'abede361264e2ae69ec1eee813a101af' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/abs.php',
         '21a5860fbef5be28db5ddfbc3cca67c4' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/acos.php',
@@ -80,19 +79,11 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         'f67964341ef83e59f1cc6a3916599312' => __DIR__ . '/..' . '/qcloud/cos-sdk-v5/src/Qcloud/Cos/Common.php',
         '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        'd767e4fc2dc52fe66584ab8c6684783e' => __DIR__ . '/..' . '/adbario/php-dot-notation/src/helpers.php',
-        '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
-        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '66453932bc1be9fb2f910a27947d11b6' => __DIR__ . '/..' . '/alibabacloud/client/src/Functions.php',
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'w' => 
-        array (
-            'wxalipay\\paypal\\' => 16,
-        ),
         't' => 
         array (
             'think\\view\\driver\\' => 18,
@@ -105,10 +96,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         'j' => 
         array (
             'jianyan\\excel\\' => 14,
-        ),
-        'c' => 
-        array (
-            'clagiordano\\weblibs\\configmanager\\' => 34,
         ),
         'a' => 
         array (
@@ -130,10 +117,7 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
-            'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
-            'Stringy\\' => 8,
             'ServiceSwoole\\' => 14,
         ),
         'Q' => 
@@ -160,7 +144,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         array (
             'MyCLabs\\Enum\\' => 13,
             'Matrix\\' => 7,
-            'MQ\\' => 3,
         ),
         'L' => 
         array (
@@ -168,14 +151,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\Cached\\' => 24,
             'League\\Flysystem\\' => 17,
-        ),
-        'J' => 
-        array (
-            'JmesPath\\' => 9,
-        ),
-        'I' => 
-        array (
-            'Im\\api\\' => 7,
         ),
         'G' => 
         array (
@@ -197,20 +172,10 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         'C' => 
         array (
             'Complex\\' => 8,
-            'Chuanglan\\' => 10,
-        ),
-        'A' => 
-        array (
-            'AlibabaCloud\\Client\\' => 20,
-            'Adbar\\' => 6,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'wxalipay\\paypal\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/code-lives/paypal/src',
-        ),
         'think\\view\\driver\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-view/src',
@@ -241,10 +206,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         'jianyan\\excel\\' => 
         array (
             0 => __DIR__ . '/..' . '/jianyan74/php-excel/src',
-        ),
-        'clagiordano\\weblibs\\configmanager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/clagiordano/weblibs-configmanager/src',
         ),
         'app\\' => 
         array (
@@ -282,21 +243,9 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
-        'Symfony\\Component\\Yaml\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/yaml',
-        ),
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
-        ),
-        'Stringy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
         ),
         'ServiceSwoole\\' => 
         array (
@@ -355,10 +304,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
-        'MQ\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/aliyunmq/mq-http-sdk/MQ',
-        ),
         'Liz\\Flysystem\\QiNiu\\' => 
         array (
             0 => __DIR__ . '/..' . '/liz/flysystem-qiniu/src',
@@ -374,14 +319,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
-        ),
-        'JmesPath\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mtdowling/jmespath.php/src',
-        ),
-        'Im\\api\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/code-lives/im/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -419,18 +356,6 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
         ),
-        'Chuanglan\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/code-lives/chuanglan/src',
-        ),
-        'AlibabaCloud\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/alibabacloud/client/src',
-        ),
-        'Adbar\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/adbario/php-dot-notation/src',
-        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -450,8 +375,22 @@ class ComposerStaticInit2a6a278e6535c78c54eefd7e76c19af5
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Datamatrix' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/datamatrix.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+        'PDF417' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/pdf417.php',
+        'QRcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/qrcode.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'TCPDF' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf.php',
+        'TCPDF2DBarcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_barcodes_2d.php',
+        'TCPDFBarcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_barcodes_1d.php',
+        'TCPDF_COLORS' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_colors.php',
+        'TCPDF_FILTERS' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_filters.php',
+        'TCPDF_FONTS' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_fonts.php',
+        'TCPDF_FONT_DATA' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_font_data.php',
+        'TCPDF_IMAGES' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_images.php',
+        'TCPDF_IMPORT' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_import.php',
+        'TCPDF_PARSER' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_parser.php',
+        'TCPDF_STATIC' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_static.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );

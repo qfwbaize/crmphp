@@ -44,6 +44,8 @@ Route::group('apis', function () {
     Route::get('companytask/read_attor_company_reward', 'CompanyTask/read_attor_company_reward'); //查看对机构得打款凭证
     Route::get('authentication/read', 'Authentication/read'); //查看是否已经备案
     Route::post('authentication/add', 'Authentication/create'); //添加备案信息
+    Route::get('pdf/evidence', 'Pdf/evidence'); //添加备案信息
+
 
 
     })->ext();
@@ -52,6 +54,7 @@ Route::group('apis', function () {
 
     Route::post('uploads/mechanism_evidence_upload', 'Uploads/mechanism_evidence_upload'); //机构证据上传
     Route::post('uploads/mechanism_contract_upload', 'Uploads/mechanism_contract_upload'); //机构合同上传
+    Route::post('uploads/mechanism_contract_upload', 'Uploads/authentication'); //机构合同上传
 })->ext();
 
 Route::group('apis', function () {
