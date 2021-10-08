@@ -259,4 +259,11 @@ return date('Ym') . '/' .mt_rand(100, 999);
     }
 
 }
+if(!function_exists('upload')) {
+    function upload()
+    {
+        return mt_rand(100, 999);
 
+    }
+
+}

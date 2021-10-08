@@ -42,6 +42,8 @@ Route::group('apis', function () {
     Route::get('companytask/company_reward', 'CompanyTask/company_reward'); //查看所有凭证
     Route::get('companytask/read_company_reward', 'CompanyTask/read_company_reward'); //查看对个人得打款凭证
     Route::get('companytask/read_attor_company_reward', 'CompanyTask/read_attor_company_reward'); //查看对机构得打款凭证
+    Route::get('authentication/read', 'Authentication/read'); //查看是否已经备案
+    Route::post('authentication/add', 'Authentication/create'); //添加备案信息
 
 
     })->ext();

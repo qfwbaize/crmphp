@@ -88,4 +88,39 @@ class Uploads extends AdminController
 
         return json(['code'=>200,'msg'=>'成功','data'=>$data]);
     }
+    /**
+     * 机构实名认证
+     *
+     * @return \think\Response
+     */
+    public function authentication(){
+        $company_id='authentication/'.$this->AdminId();
+        $files = $this->request->file('file');
+
+        if($files==NULL){
+            $this->error('没上传文件');
+        }
+
+        foreach($files as $k=>$file){
+
+
+            $temp=explode(".",$_FILES['file']['name'][$k]);
+
+            $extension =end($temp);
+
+            if(!in_array($extension,array("jpg","png"))){
+
+                $this->error('不合法');
+            }
+            $saveName[] = Filesystem::disk('aliyun')->putFile("$company_id",$file,'upload');
+
+        }
+        $data=[];
+        foreach ($saveName as $v){
+            $v=env('FILESYSTEM.URL').$v;
+            $data[]=$v;
+        }
+
+        return json(['code'=>200,'msg'=>'成功','data'=>$data]);
+    }
 }
