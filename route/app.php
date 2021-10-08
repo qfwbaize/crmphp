@@ -54,7 +54,7 @@ Route::group('apis', function () {
 
     Route::post('uploads/mechanism_evidence_upload', 'Uploads/mechanism_evidence_upload'); //机构证据上传
     Route::post('uploads/mechanism_contract_upload', 'Uploads/mechanism_contract_upload'); //机构合同上传
-    Route::post('uploads/mechanism_contract_upload', 'Uploads/authentication'); //机构合同上传
+    Route::post('uploads/authentication', 'Uploads/authentication'); //机构合同上传
 })->ext();
 
 Route::group('apis', function () {
