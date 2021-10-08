@@ -41,7 +41,7 @@ class Authentication extends AdminController
         if($row['status']=='-1'){
             $data = ['code' => -1, 'msg' => '审核失败', 'data' => $row,];
         }elseif($row['status']==0){
-            $data = ['code' => 1, 'msg' => '审核中', 'data' =>'' ,];
+            $data = ['code' => 1, 'msg' => '审核中', 'data' =>$row ,];
         }else{
             $data = ['code' => 200, 'msg' => '审核成功', 'data' =>'' ,];
         }
