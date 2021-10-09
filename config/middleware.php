@@ -10,6 +10,7 @@ return [
         'verification' => app\middleware\verification::class,
         'auths' => app\middleware\Auths::class,
         'log' => app\middleware\Log::class,
+        'company' => app\middleware\company::class,
 
         ],
     ];
