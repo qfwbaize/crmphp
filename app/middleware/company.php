@@ -23,6 +23,7 @@ class company
 
 
         $data=Cache::store('redis')->get("ONE_STAND:USER:login_token:$token");
+        $data=json_decode($data,true);
         $authentication=Db::name('company_authentication')->where('company_id',$data['cid'])
             ->find();
         if(empty($authentication)){
