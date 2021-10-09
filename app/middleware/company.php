@@ -26,11 +26,13 @@ class company
         $data=json_decode($data,true);
         $authentication=Db::name('company_authentication')->where('company_id',$data['cid'])
             ->find();
+
         if(empty($authentication)){
             $datas = ['code' => 0, 'msg' => '您还没有认证',];
             return  json($datas);
         }
-        if(empty($authentication['status']=='-1')){
+
+        if($authentication['status']=='-1'){
             $datas = ['code' => 0, 'msg' => '您的企业认证失败请重新认证',];
             return  json($datas);
         }
