@@ -6,6 +6,7 @@ namespace app\controller;
 use app\common\controller\AdminController;
 use app\model\BusinessCard;
 use app\model\Company;
+use app\model\Companytaskrelation;
 use app\model\Cooperation;
 use app\model\Reward;
 use app\model\TaskContent;
@@ -207,14 +208,27 @@ class CompanyTask extends AdminController
 
 
         list($page, $limit, $where) = $this->buildTableParames();
+        $task=$this->model->find($task_id);
+
+        if($task['type']==1){
+            $realtion= new Companytaskrelation();
+
+            $realtion=$realtion->where('pid',$task_id)->where('type','>','1')->select();
+            $data=[];
+            foreach ($realtion as $v){
+                $data[]=$v['task_id'];
+            }
+            $task_id=join(',',$data);
+
+        }
         $taskpeople = new TaskPeople();
         $count = $taskpeople
             ->where($where)
-            ->where('task_id', $task_id)
+            ->wherein('task_id', $task_id)
             ->count();
         $list = $taskpeople
             ->where($where)
-            ->where('task_id', $task_id)
+            ->wherein('task_id', $task_id)
             ->page($page, $limit)
             ->order($this->sort)
             ->select();
@@ -523,6 +537,24 @@ class CompanyTask extends AdminController
 
 
                     break;
+            }
+            if($post['pid']>0){
+                $relation=new Companytaskrelation();
+                $relation_save[]=[
+                    'task_id'=>$id,
+                    'pid'=>$post['pid'],
+                    'type'=>$post['type'],
+                ];
+                $relation_list=$relation->where('task_id',$post['pid'])->select();
+                foreach ($relation_list as $v) {
+                    $relation_save[]=[
+                        'task_id'=>$id,
+                        'pid'=>$v['pid'],
+                        'type'=>$post['type']
+                    ];
+                }
+                $relation->saveAll($relation_save);
+
             }
 
 
