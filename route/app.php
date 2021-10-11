@@ -25,7 +25,7 @@ Route::group('apis', function () {
 
     Route::post('uploads/mechanism_evidence_upload', 'Uploads/mechanism_evidence_upload'); //机构证据上传
     Route::post('uploads/mechanism_contract_upload', 'Uploads/mechanism_contract_upload'); //机构合同上传
-    Route::post('uploads/authentication', 'Uploads/authentication'); //机构合同上传
+    Route::post('uploads/authentication', 'Uploads/authentication'); //机构实名上传
     Route::post('companytask/add', 'CompanyTask/create'); //发布任务
     Route::get('pdf/evidence', 'Pdf/evidence'); //导出pdf
     Route::get('companytask/task_people', 'CompanyTask/task_people'); //查看正在工作得员工
